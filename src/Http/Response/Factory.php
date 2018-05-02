@@ -168,9 +168,9 @@ class Factory
      *
      * @return void
      */
-    public function error($message, $statusCode)
+    public function error($message, $statusCode = 200, $code = 422)
     {
-        throw new HttpException($statusCode, $message);
+        throw new HttpException($statusCode, $message, null, [], $code);
     }
 
     /**
